@@ -1,0 +1,17 @@
+/home/vagrant/.rbenv/versions/2.1.0/bin/ruby extconf.rb 
+checking for main() in -lc... yes
+creating Makefile
+
+make "DESTDIR=" clean
+make: Warning: File `Makefile' has modification time 0.025 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+make "DESTDIR="
+make: Warning: File `Makefile' has modification time 0.014 s in the future
+compiling gherkin_lexer_zh_tw.c
+linking shared-object gherkin_lexer_zh_tw.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 gherkin_lexer_zh_tw.so ./.gem.20140426-7615-1h8nlrg
+installing default gherkin_lexer_zh_tw libraries

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140121233432) do
+ActiveRecord::Schema.define(:version => 20140502193947) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20140121233432) do
   create_table "events", :force => true do |t|
     t.integer  "user_id"
     t.string   "type"
-    t.string   "state",                                            :default => "started"
+    t.string   "state",                                             :default => "started"
     t.string   "title"
     t.string   "topic"
     t.string   "host_firstname"
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20140121233432) do
     t.string   "facebook"
     t.string   "website"
     t.string   "webshop"
-    t.boolean  "permission",                                       :default => false
-    t.boolean  "boolean",                                          :default => false
+    t.boolean  "permission",                                        :default => false
+    t.boolean  "boolean",                                           :default => false
     t.string   "payment_options"
     t.string   "paypal_email"
     t.string   "sendcheck_address"
@@ -66,37 +66,38 @@ ActiveRecord::Schema.define(:version => 20140121233432) do
     t.date     "begins_at"
     t.date     "ends_at"
     t.integer  "hours"
-    t.string   "hours_per",                                        :default => "week"
+    t.string   "hours_per",                                         :default => "week"
     t.string   "location_address"
     t.string   "location_address2"
     t.string   "location_city"
     t.string   "location_state"
     t.string   "location_zipcode"
-    t.boolean  "location_private",                                 :default => true
-    t.boolean  "location_varies",                                  :default => false
+    t.boolean  "location_private",                                  :default => true
+    t.boolean  "location_varies",                                   :default => false
     t.integer  "age_min"
     t.integer  "age_max"
     t.integer  "registration_min"
     t.integer  "registration_max"
-    t.datetime "created_at",                                                              :null => false
-    t.datetime "updated_at",                                                              :null => false
+    t.datetime "created_at",                                                               :null => false
+    t.datetime "updated_at",                                                               :null => false
     t.string   "charge_id"
     t.string   "kind"
     t.string   "other_needs"
-    t.decimal  "price",              :precision => 8, :scale => 2
+    t.decimal  "price",               :precision => 8, :scale => 2
     t.time     "begins_at_time"
     t.time     "ends_at_time"
     t.string   "location_nbrhood"
-    t.boolean  "datetime_tba",                                     :default => false
+    t.boolean  "datetime_tba",                                      :default => false
     t.string   "respect_my_style"
     t.integer  "prereg_id"
-    t.boolean  "gender",                                           :default => false
-    t.boolean  "follow_up_sent",                                   :default => false,     :null => false
-    t.boolean  "reminder_sent",                                    :default => false,     :null => false
+    t.boolean  "gender",                                            :default => false
+    t.boolean  "follow_up_sent",                                    :default => false,     :null => false
+    t.boolean  "reminder_sent",                                     :default => false,     :null => false
     t.text     "availability"
     t.text     "reject_reason"
     t.text     "revoke_reason"
     t.string   "legal_name"
+    t.boolean  "applications_closed"
   end
 
   add_index "events", ["charge_id"], :name => "index_events_on_charge_id"

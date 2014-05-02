@@ -1,0 +1,58 @@
+/home/vagrant/.rbenv/versions/2.1.0/bin/ruby extconf.rb 
+checking for pg_config... yes
+Using config values from /usr/bin/pg_config
+checking for libpq-fe.h... yes
+checking for libpq/libpq-fs.h... yes
+checking for PQconnectdb() in -lpq... yes
+checking for PQconnectionUsedPassword()... yes
+checking for PQisthreadsafe()... yes
+checking for PQprepare()... yes
+checking for PQexecParams()... yes
+checking for PQescapeString()... yes
+checking for PQescapeStringConn()... yes
+checking for PQgetCancel()... yes
+checking for lo_create()... yes
+checking for pg_encoding_to_char()... yes
+checking for PQsetClientEncoding()... yes
+checking for rb_encdb_alias()... yes
+checking for rb_enc_alias()... yes
+checking for struct pgNotify.extra in libpq-fe.h... yes
+checking for unistd.h... yes
+checking for ruby/st.h... yes
+creating extconf.h
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling compat.c
+compiling pg.c
+pg.c: In function 'pgresult_check':
+pg.c:142:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+pg.c: In function 'pgconn_wait_for_notify':
+pg.c:2117:3: warning: 'rb_thread_select' is deprecated (declared at /home/vagrant/.rbenv/versions/2.1.0/include/ruby-2.1.0/ruby/intern.h:440) [-Wdeprecated-declarations]
+pg.c: In function 'pgconn_block':
+pg.c:2592:3: warning: format not a string literal and no format arguments [-Wformat-security]
+pg.c:2598:3: warning: 'rb_thread_select' is deprecated (declared at /home/vagrant/.rbenv/versions/2.1.0/include/ruby-2.1.0/ruby/intern.h:440) [-Wdeprecated-declarations]
+pg.c:2607:4: warning: format not a string literal and no format arguments [-Wformat-security]
+pg.c: In function 'pgconn_locreate':
+pg.c:2866:11: warning: variable 'lo_oid' set but not used [-Wunused-but-set-variable]
+pg.c: In function 'find_or_create_johab':
+pg.c:3940:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+pg.c:3946:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+pg.c:3947:3: warning: implicit declaration of function 'rb_encdb_alias' [-Wimplicit-function-declaration]
+pg.c: In function 'pgconn_get_client_encoding_as_rb_encoding':
+pg.c:3974:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+pg.c: In function 'pgconn_get_rb_encoding_as_pg_encname':
+pg.c:4006:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+pg.c: In function 'pgconn_internal_encoding_set':
+pg.c:4065:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+pg.c: In function 'pgconn_external_encoding':
+pg.c:4121:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+linking shared-object pg_ext.so
+
+make "DESTDIR=" install
+make: Warning: File `pg_ext.so' has modification time 0.0044 s in the future
+/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20140426-7615-1kvur64
+installing default pg_ext libraries
+make: warning:  Clock skew detected.  Your build may be incomplete.
